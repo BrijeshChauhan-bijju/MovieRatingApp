@@ -192,6 +192,7 @@ class RatingDetailsScreenState extends State<RatingDetailsScreen>
                             Expanded(
                               child: Text(
                                 "${movieFullDetails.title!}",
+                                textAlign: TextAlign.right,
                                 // maxLines: 1,
                                 // overflow: TextOverflow.ellipsis,
                                 style: TextStyle(

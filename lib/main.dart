@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:imdbmovieapp/presentation/BottomBarScreen/BottomNavigatonBarProvider.dart';
+import 'package:imdbmovieapp/presentation/ComingSoonScreen/ComingSoonProvider.dart';
 import 'package:imdbmovieapp/presentation/HomeScreen/HomeScreenProvider.dart';
 import 'package:imdbmovieapp/presentation/LoginScreen/Loginscreenprovider.dart';
 import 'package:imdbmovieapp/presentation/LoginScreen/loginScreen.dart';
@@ -36,8 +37,11 @@ void main() async {
         ),
         ChangeNotifierProvider<RatingDetailScreenProvider>(
           create: (context) => RatingDetailScreenProvider(),
-        ), ChangeNotifierProvider<SearchScreenProvider>(
+        ),
+        ChangeNotifierProvider<SearchScreenProvider>(
           create: (context) => SearchScreenProvider(),
+        ),ChangeNotifierProvider<ComingSoonProvider>(
+          create: (context) => ComingSoonProvider(),
         ),
       ], child: IMDBMovie()),
     );

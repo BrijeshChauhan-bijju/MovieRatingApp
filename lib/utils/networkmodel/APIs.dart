@@ -5,7 +5,7 @@ class APIs {
   // Base url
 
   static const String baseUrl = "https://imdb-api.com/en/API";
-  static const String apikey = "k_n0of3yma";
+  static const String apikey = "k_kez41nvt";
 
   // chauhanbijju22@gmail.com : k_j1y206r6
   // brijeshchauhan7895@gmail.com : k_qd9r34f0
@@ -22,6 +22,9 @@ class APIs {
   static const String moviewikipedia = "$baseUrl/Wikipedia/$apikey/";
   static const String moviefulldetails = "$baseUrl/Title/$apikey/";
   static const String searchall = "$baseUrl/SearchTitle/$apikey/";
+  static const String toptvshows = "$baseUrl/Top250TVs/$apikey/";
+  static const String mostpopulartvshows = "$baseUrl/MostPopularTVs/$apikey/";
+  static const String comingsoon = "$baseUrl/ComingSoon/$apikey/";
 
   static late BuildContext context;
 }

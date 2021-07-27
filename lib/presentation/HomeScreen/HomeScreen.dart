@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:imdbmovieapp/data/model/most_popular_movies.dart';
 import 'package:imdbmovieapp/data/model/theater_movies.dart';
@@ -22,7 +23,7 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    fetchData();
+    fetchData(false);
   }
 
   @override
@@ -87,6 +88,10 @@ class HomeScreenState extends State<HomeScreen> {
                           RichText(
                               text: TextSpan(
                                   text: "TV Shows",
+                                  recognizer: new TapGestureRecognizer()
+                                    ..onTap = () {
+                                      fetchData(true);
+                                    },
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
@@ -95,6 +100,10 @@ class HomeScreenState extends State<HomeScreen> {
                           RichText(
                               text: TextSpan(
                                   text: "Movies",
+                                  recognizer: new TapGestureRecognizer()
+                                    ..onTap = () {
+                                      fetchData(false);
+                                    },
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
@@ -118,7 +127,7 @@ class HomeScreenState extends State<HomeScreen> {
               width: MediaQuery.of(context).size.width,
               margin: EdgeInsets.only(left: 10, top: 20),
               child: Text(
-                "Popular",
+                provider.tvshowsdisplay ? "Popular TvShows" : "Popular Movies",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 22,
@@ -168,7 +177,7 @@ class HomeScreenState extends State<HomeScreen> {
               width: MediaQuery.of(context).size.width,
               margin: EdgeInsets.only(left: 10, top: 20),
               child: Text(
-                "Top 250 Movies",
+                provider.tvshowsdisplay ? "Top 250 TvShows" : "Top 250 Movies",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 22,
@@ -260,9 +269,10 @@ class HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  void fetchData() {
+  void fetchData(bool istvshows) {
     Future.delayed(Duration(milliseconds: 300), () {
-      provider.gettheatermovielist();
+      provider.setloading(true);
+      provider.gettheatermovielist(istvshows);
     });
   }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- You can insert your own image assets here-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:drawable="@android:color/black" />
+<!--    <item-->
+<!--        android:drawable="@drawable/imdb"  android:gravity="center"/>-->
+
+    <item
+        android:left="200dp"
+        android:right="200dp">
+        <bitmap
+            android:src="@drawable/imdb"
+            android:gravity="center" />
+    </item>
+
+</layer-list>
+
+
+
+

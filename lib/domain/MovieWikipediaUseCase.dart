@@ -5,16 +5,12 @@ import 'package:imdbmovieapp/data/webservice/repository/TopMovieRepository/TopMo
 import 'package:imdbmovieapp/data/webservice/repository/YoutubeTrailerRepository/YoutubeTrailerRepository.dart';
 import 'package:imdbmovieapp/domain/BaseUseCase.dart';
 
-
 class MovieWikipediaUseCase extends BaseUseCase<dynamic> {
   late MovieWikipediaRepository _movieWikipediaRepository;
 
   MovieWikipediaUseCase(MovieWikipediaRepository _movieWikipediaRepository) {
     this._movieWikipediaRepository = _movieWikipediaRepository;
   }
-
-
-
 
   @override
   Future callapi([videoid]) {

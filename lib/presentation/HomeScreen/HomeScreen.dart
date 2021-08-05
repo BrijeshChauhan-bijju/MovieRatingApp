@@ -6,6 +6,7 @@ import 'package:imdbmovieapp/data/model/theater_movies.dart';
 import 'package:imdbmovieapp/data/model/top_movies.dart';
 import 'package:imdbmovieapp/data/widget/ImageSlider/ImageSlider.dart';
 import 'package:imdbmovieapp/presentation/HomeScreen/HomeScreenProvider.dart';
+import 'package:imdbmovieapp/presentation/ProfileScreen/ProfileScreen.dart';
 import 'package:imdbmovieapp/presentation/RatingDetailsScreen/RatingDetailsScreen.dart';
 import 'package:imdbmovieapp/presentation/SearchScreen/SearchScreen.dart';
 import 'package:imdbmovieapp/utils/AppColors.dart';
@@ -31,13 +32,16 @@ class HomeScreenState extends State<HomeScreen> {
     provider = Provider.of<HomeScreenProvider>(context);
 
     return MaterialApp(
+        color: Colors.black,
         debugShowCheckedModeBanner: false,
         home: provider.isloading
-            ? Center(
-                child: CircularProgressIndicator(
-                  color: AppColors.primaryColor,
-                ),
-              )
+            ? Scaffold(
+                backgroundColor: Colors.black,
+                body: Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.primaryColor,
+                  ),
+                ))
             : buildhomescreen(provider.theatermovies, provider.topMovies,
                 provider.mostPopularMovies));
   }
@@ -79,6 +83,28 @@ class HomeScreenState extends State<HomeScreen> {
                                     builder: (context) => SearchScreen()));
                           },
                         ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context, rootNavigator: true).push(
+                                MaterialPageRoute(builder: (context) => ProfileScreen()));
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(right: 10),
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                color: Colors.amber,
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.circular(5)),
+                            child: Icon(
+                              Icons.supervised_user_circle_outlined,
+                              color: Colors.white,
+                              size: 25,
+                            ),
+                          ),
+                        )
                       ],
                     ),
                     Container(

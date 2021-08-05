@@ -186,13 +186,11 @@ class RatingDetailsScreenState extends State<RatingDetailsScreen>
                               style:
                                   TextStyle(color: Colors.white, fontSize: 18),
                             ),
-                            SizedBox(
-                              width: 140,
-                            ),
+                           Spacer(),
                             Expanded(
                               child: Text(
                                 "${movieFullDetails.title!}",
-                                textAlign: TextAlign.right,
+                                textAlign: TextAlign.left,
                                 // maxLines: 1,
                                 // overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
@@ -209,14 +207,12 @@ class RatingDetailsScreenState extends State<RatingDetailsScreen>
                               style:
                                   TextStyle(color: Colors.white, fontSize: 18),
                             ),
-                            SizedBox(
-                              width: 140,
-                            ),
-                            Text(
+                            Spacer(),
+                            Expanded(child: Text(
                               "${movieFullDetails.year}",
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 18),
-                            )
+                              TextStyle(color: Colors.white, fontSize: 18),
+                            ))
                           ],
                         ),
                         Row(
@@ -227,15 +223,13 @@ class RatingDetailsScreenState extends State<RatingDetailsScreen>
                               style:
                                   TextStyle(color: Colors.white, fontSize: 18),
                             ),
-                            SizedBox(
-                              width: 140,
-                            ),
-                            Text(
+                            Spacer(),
+                            Expanded(child: Text(
                               "${movieFullDetails.type}",
                               textAlign: TextAlign.start,
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 18),
-                            )
+                              TextStyle(color: Colors.white, fontSize: 18),
+                            ))
                           ],
                         )
                       ],

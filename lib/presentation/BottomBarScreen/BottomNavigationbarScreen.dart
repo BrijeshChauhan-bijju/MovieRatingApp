@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,11 +11,13 @@ import 'package:provider/provider.dart';
 class BottomNavigationbarScreen extends StatefulWidget {
   static const String TAG = "/BottomNavigationbarScreen";
 
-  BottomNavigationbarScreenState createState() => BottomNavigationbarScreenState();
+  BottomNavigationbarScreen();
+
+  BottomNavigationbarScreenState createState() =>
+      BottomNavigationbarScreenState();
 }
 
 class BottomNavigationbarScreenState extends State<BottomNavigationbarScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -24,56 +27,54 @@ class BottomNavigationbarScreenState extends State<BottomNavigationbarScreen> {
   Widget build(BuildContext context) {
     var provider = Provider.of<BottomNavigationBarProvider>(context);
     return AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle.light,
-        child:SafeArea(
-            child: Scaffold(
-              body: getPage(provider.currentIndex),
-              bottomNavigationBar: BottomNavigationBar(
-                type: BottomNavigationBarType.fixed,
-                currentIndex: provider.currentIndex,
-                unselectedItemColor: Colors.grey,
-                selectedItemColor:  Colors.white,
-                onTap: (index) {
-                  provider.setcurrentIndex=index;
-                },
-                items: [
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.home_filled,
-                      size: 20,
-                      color: provider.currentIndex == 0
-                          ? Colors.white
-                          : Colors.grey,
-                    ),
-                    label: "Home",
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.play_circle_filled,
-                      size: 20,
-                      color: provider.currentIndex == 1
-                          ? Colors.white
-                          : Colors.grey,
-                    ),
-                    label: "Coming Soon",
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.downloading_rounded,
-                      size: 20,
-                      color: provider.currentIndex == 2
-                          ? Colors.white
-                          : Colors.grey,
-                    ),
-                    label: "Downloads",
-                  ),
-                ],
+      value: SystemUiOverlayStyle.light,
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.black,
+          body: getPage(provider.currentIndex),
+          bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: Colors.black,
+            type: BottomNavigationBarType.fixed,
+            currentIndex: provider.currentIndex,
+            unselectedItemColor: Colors.grey,
+            selectedItemColor: Colors.white,
+            onTap: (index) {
+              provider.setcurrentIndex = index;
+            },
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home_filled,
+                  size: 20,
+                  color:
+                      provider.currentIndex == 0 ? Colors.white : Colors.grey,
+                ),
+                label: "Home",
               ),
-            ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.play_circle_filled,
+                  size: 20,
+                  color:
+                      provider.currentIndex == 1 ? Colors.white : Colors.grey,
+                ),
+                label: "Coming Soon",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.downloading_rounded,
+                  size: 20,
+                  color:
+                      provider.currentIndex == 2 ? Colors.white : Colors.grey,
+                ),
+                label: "Downloads",
+              ),
+            ],
           ),
-        );
+        ),
+      ),
+    );
   }
-
 
   Widget getPage(int index) {
     switch (index) {
@@ -87,5 +88,4 @@ class BottomNavigationbarScreenState extends State<BottomNavigationbarScreen> {
         return HomeScreen();
     }
   }
-  
 }

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "619996799318",
+    "project_id": "imdbmovierating",
+    "storage_bucket": "imdbmovierating.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619996799318:android:d88fddcd7160331d24b6f7",
+        "android_client_info": {
+          "package_name": "com.example.imdbmovieapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "619996799318-ogp7nejv8f4bnqkaepd86fhn8gkdghq1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.imdbmovieapp",
+            "certificate_hash": "909ba2a0473ec33e3978584bca554b0819457177"
+          }
+        },
+        {
+          "client_id": "619996799318-38phh6b6pfa1lks211080633n26dsv8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQwUEzMPcB-leVuR-31z9I0_BuJajzijg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "619996799318-38phh6b6pfa1lks211080633n26dsv8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

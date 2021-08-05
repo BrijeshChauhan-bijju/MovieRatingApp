@@ -4,16 +4,12 @@ import 'package:imdbmovieapp/data/webservice/repository/TopMovieRepository/TopMo
 import 'package:imdbmovieapp/data/webservice/repository/YoutubeTrailerRepository/YoutubeTrailerRepository.dart';
 import 'package:imdbmovieapp/domain/BaseUseCase.dart';
 
-
 class YoutubeTrailerUseCase extends BaseUseCase<dynamic> {
   late YoutubeTrailerRepository _youtubeTrailerRepository;
 
   YoutubeTrailerUseCase(YoutubeTrailerRepository _youtubeTrailerRepository) {
     this._youtubeTrailerRepository = _youtubeTrailerRepository;
   }
-
-
-
 
   @override
   Future callapi([videoid]) {

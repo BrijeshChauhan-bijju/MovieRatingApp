@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:imdbmovieapp/data/model/movie_full_details.dart';
 import 'package:imdbmovieapp/presentation/RatingDetailsScreen/RatingDetailsScreenProvider.dart';
 import 'package:share/share.dart';
@@ -49,6 +50,18 @@ Widget getCachedNetworkImage(
 
 sharelink(String url) {
   return Share.share(url);
+}
+
+showtoast(String message){
+  return Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.CENTER,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+      fontSize: 16.0
+  );
 }
 
 showbottomsheet(
